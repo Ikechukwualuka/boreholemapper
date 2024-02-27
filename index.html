@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B-Hole Collection</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://imgur.com/Hn22XLT.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: flex-end; /* Align content to the right */
+      align-items: center;
+    }
+
+    .slideshow-container {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 46vh;
+      overflow: hidden;
+      border: 5px solid blue; /* Add a blue border */
+      border-length: 0 200px; /* Set the border length to 340px */
+      
+    }
+
+    .slideshow-container::before {
+     content: '';
+     position: absolute;
+     top: 350px; /* Adjust as needed to fit within the outer border */
+     left: 0px; /* Adjust as needed to fit within the outer border */
+     width: 1000px;
+     height: calc(100% - 20px); /* Adjust based on the outer border thickness */
+     border-top: 10px solid blue; /* Adjust thickness and color as needed */
+   }
+
+    .website-name {
+      font-size: 40px;
+      font-weight: bold;
+      color: white;
+      font-family: rockwell extra bold;
+      text-shadow: 0 0 25px yellow; /* Add yellow halo effect */
+      position: absolute;
+      top: 5px; /* Adjust as needed to fit within the outer border */
+      left: 80px; /* Adjust as needed to fit within the outer border */
+    }
+    
+    .website-detail {
+      font-size: 15px;
+      font-weight: bold;
+      color: white;
+      font-family: aptos;
+      text-shadow: 0 0 10px yellow; /* Add yellow halo effect */
+      position: absolute;
+      top: 45px; /* Adjust as needed to fit within the outer border */
+      left: 10px; /* Adjust as needed to fit within the outer border */
+    }
+
+@keyframes floatAnimation {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: calc(100vh - 70vh); /* Calculate the bottom position */
+  }
+}
+
+
+
+    .mySlides {
+      width: 33.33%;
+      float: left;
+      display: none;
+    }
+
+    .fade {
+      animation: fadeEffect 4s;
+    }
+
+    @keyframes fadeEffect {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+
+    img {
+      width: 100%;
+    }
+    
+  body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.background-container {
+  margin: 0 auto;
+  position: fixed;
+  top: 60px; /* Adjust this value to set the height position from the top */
+  left: 1%; /* Adjust this value to set the width position from the left */
+  color: black; /* Set the text color to white */
+  text-shadow: 0 0 4px yellow; /* Add red halo effect */
+  background-color: #f0f0f0; /* Add light grey background */
+  width: 25%; /* Adjust the width as needed */
+  background-color: rgba(240, 240, 240, 0.4); /* Light grey background with 80% opacity */
+}
+
+
+.content-container {
+  width: 800px; /* Adjust the width of the content container */
+  margin: 0 auto;
+  padding: 20px; /* Adjust as needed */
+  height: 1000px; /* Adjust the height of the content container */
+}
+
+.form-half {
+  width: 100%;
+}
+
+.form-half h2 {
+  text-align: left;
+  font-size: 18px;
+  margin-bottom: 7px;
+}
+
+.form-half label {
+  display: block;
+  margin-bottom: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.form-half input[type="text"],
+.form-half input[type="date"],
+.form-half input[type="number"],
+.form-half select,
+.form-half textarea {
+  width: calc(50% - 16px); /* Account for padding and border */
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.form-half select {
+  width: calc(50% - 16px);
+}
+
+.form-half input[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 14px;
+}
+
+.form-half input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Custom Dropdown */
+.custom-dropdown {
+  position: relative;
+  width: calc(50% - 16px);
+}
+
+.custom-dropdown-label {
+  display: block;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.custom-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 100;
+  display: none;
+}
+
+.custom-dropdown-menu.open {
+  display: block;
+}
+
+.custom-dropdown-menu label {
+  display: block;
+  padding: 5px;
+}
+  
+  </style>
+</head>
+
+<head>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+	<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+	<style>
+		#map-container {
+			position: absolute;
+			top: 16%; /* Adjust as needed to center vertically */
+			left: 148%; /* Adjust as needed to center horizontally */
+			transform: translate(-50%, -50%);
+		}
+
+		#map { 
+			width: 370px; 
+			height: 284px; 
+		}
+	</style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>My Map</title>
+</head>
+<body>
+  <!-- Link to open QGIS Cloud site within iframe -->
+  <a href="https://qgiscloud.com/Borehole/Borehole/?l=Borehole%20points&bl=mapnik&t=Borehole&e=819488%2C710463%2C853186%2C727100_" target="_blank">Open QGIS Cloud Link</a>
+
+  <!-- Iframe to display QGIS Cloud site -->
+  <iframe src="https://qgiscloud.com/Borehole/Borehole/?l=Borehole%20points&bl=mapnik&t=Borehole&e=819488%2C710463%2C853186%2C727100_" width="73.5%" height="420" style="position: absolute; top: 365px; left: 420px;"></iframe>
+</body>
+<body>
+ <div class="slideshow-wrapper">
+    <div class="website-name">B~HOLE SPATIAL MAPPER</div>
+    <div class="website-detail">Collect, Upload, Monitor and Report Issues on Public Borehole Established Points within the Local Community</div>
+  <!-- First set of slides -->
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="https://imgur.com/Cw9F0WR.png" alt="Slide 1">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="https://imgur.com/LkWW52s.png" alt="Slide 2">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="https://imgur.com/f5SYkjs.png" alt="Slide 3">
+    </div>
+  </div>
+
+  <!-- Second set of slides -->
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="https://imgur.com/f0ODAFe.png" alt="Slide 1">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="https://imgur.com/kHViHNU.png" alt="Slide 2">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="https://imgur.com/9T4THP4.png" alt="Slide 3">
+    </div>
+  </div>
+
+  <!-- Third set of slides -->
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="https://imgur.com/YPTkeuT.png" alt="Slide 1">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="https://imgur.com/6P0ahll.png" alt="Slide 2">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="https://imgur.com/EzjBPxy.png" alt="Slide 3">
+    </div>
+  </div>
+  <div class="background-container">
+    <div class="content-container">
+    <div class="form-half">
+      <h2>Collection Form</h2>
+      <form action="https://formspree.io/f/myyrjzrj" method="post">
+        <label for="boreholeName">Borehole Name:</label>
+        <input type="text" id="boreholeName" name="boreholeName" required>
+        
+        <label for="establishedDate">Established Date:</label>
+        <input type="date" id="establishedDate" name="establishedDate" required>
+        
+        <label for="commissionedDate">Commissioned Date:</label>
+        <input type="date" id="commissionedDate" name="commissionedDate" required>
+        
+        <label for="areaLocated">Area Located:</label>
+        <input type="text" id="areaLocated" name="areaLocated" required>
+        
+        <label for="constructedBy">Constructed By:</label>
+        <input type="text" id="constructedBy" name="constructedBy" required>
+        
+        <label for="numberOfPoints">Number of Borehole Points:</label>
+        <input type="number" id="numberOfPoints" name="numberOfPoints" required>
+        
+        <label for="functioning">Is Borehole Functioning?</label>
+        <select id="functioning" name="functioning" required>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+
+        <div class="custom-dropdown">
+          <div class="custom-dropdown-label" onclick="toggleDropdown()">Functioning Days of the Week</div>
+          <div class="custom-dropdown-menu" id="daysDropdown">
+            <label><input type="checkbox" name="functioningDays[]" value="Sunday"> Sunday</label>
+            <label><input type="checkbox" name="functioningDays[]" value="Monday"> Monday</label>
+            <label><input type="checkbox" name="functioningDays[]" value="Tuesday"> Tuesday</label>
+            <label><input type="checkbox" name="functioningDays[]" value="Wednesday"> Wednesday</label>
+            <label><input type="checkbox" name="functioningDays[]" value="Thursday"> Thursday</label>
+            <label><input type="checkbox" name="functioningDays[]" value="Friday"> Friday</label>
+            <label><input type="checkbox" name="functioningDays[]" value="Saturday"> Saturday</label>
+          </div>
+        </div>
+
+        <label for="waterColor">Water Color:</label>
+        <input type="text" id="waterColor" name="waterColor" required>
+        
+        <label for="waterColor">Additional Comment From Observation:</label>
+        <input type="text" id="waterColor" name="waterColor" required>
+        
+        <label for="longitude">Longitude:</label>
+        <input type="text" id="longitude" name="longitude" required>
+        
+        <label for="latitude">Latitude:</label>
+        <input type="text" id="latitude" name="latitude" required>
+        
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let slideIndex1 = 0;
+    let slideIndex2 = 0;
+    let slideIndex3 = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides1 = document.querySelectorAll(".mySlides:nth-child(1)");
+      let slides2 = document.querySelectorAll(".mySlides:nth-child(2)");
+      let slides3 = document.querySelectorAll(".mySlides:nth-child(3)");
+
+      for (let i = 0; i < slides1.length; i++) {
+        slides1[i].style.display = "none";  
+      }
+
+      for (let i = 0; i < slides2.length; i++) {
+        slides2[i].style.display = "none";  
+      }
+
+      for (let i = 0; i < slides3.length; i++) {
+        slides3[i].style.display = "none";  
+      }
+      
+      slideIndex1++;
+      if (slideIndex1 > slides1.length) { slideIndex1 = 1 }    
+      slides1[slideIndex1-1].style.display = "block";
+
+      slideIndex2++;
+      if (slideIndex2 > slides2.length) { slideIndex2 = 1 }    
+      slides2[slideIndex2-1].style.display = "block";
+
+      slideIndex3++;
+      if (slideIndex3 > slides3.length) { slideIndex3 = 1 }    
+      slides3[slideIndex3-1].style.display = "block";
+
+      setTimeout(showSlides, 10000);
+    }
+  </script>
+  
+  <script>
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    }
+
+    function showPosition(position) {
+      document.getElementById("longitude").value = position.coords.longitude;
+      document.getElementById("latitude").value = position.coords.latitude;
+    }
+
+    // Call getLocation() when the page loads
+    window.onload = getLocation;
+
+    function toggleDropdown() {
+      const dropdownMenu = document.getElementById('daysDropdown');
+      dropdownMenu.classList.toggle('open');
+    }
+  </script>
+</body>
+<body>
+	<div id="map-container">
+		<div id="map"></div>
+	</div>
+	<script>
+		var map = L.map('map').setView([9.0820, 8.6753], 5); // Set view to Nigeria's coordinates: [latitude, longitude] and zoom level
+		var OSM = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		    maxZoom: 19,
+		    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+		}).addTo(map);
+
+		var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+			maxZoom: 17,
+			attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+		});
+
+		var USGS_USImagery = L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}', {
+			maxZoom: 20,
+			attribution: 'Tiles courtesy of the <a href="https://usgs.gov/">U.S. Geological Survey</a>'
+		});
+
+		var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+			attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+		});
+		
+		var qgisLayer = L.tileLayer('https://qgiscloud.com/GEOsolution/Shanahan_DSS_Transformer_/?l=direct%20customer%2Cindirect%20consumer%2Cnot%20connected%20potential%2Clow%20tension%20pole%2Chigh%20tension%20pole%2Cdss%20transformer%2Cservice%20wire%2Cindirect%20connection%2Cdss%20to%20lt%20pole%20line%2Cht%20to%20dss%20line%2Cdistributor%20line%2Cfeeder%20line%2Croad%2Cbuilding%2Cboundary&bl=&t=Shanahan_DSS_Transformer_&e=753975%2C683949%2C754821%2C684363_/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; QGIS Cloud'
+    }).addTo(map);
+
+		// Leaflet layer control
+		var baseMaps = {
+			'Open street map': OSM,
+			'Topo map': OpenTopoMap,
+			'USGS Imagery': USGS_USImagery,
+			'World Imagery': Esri_WorldImagery,
+			'QGIS Cloud': qgisLayer,
+		};
+
+		L.control.layers(baseMaps).addTo(map);
+	</script>
+</body>
+</html>
