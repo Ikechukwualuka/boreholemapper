@@ -3,6 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple Tablet Frame</title>
+  <style>
+    /* Styles for the Apple tablet frame */
+    .tablet-frame {
+      position: relative;
+      width: 1200px; /* Adjust width as needed */
+      height: 750px; /* Adjust height as needed */
+      background-color: #87CEEB;
+      border: 2px solid #aaa;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 20px auto; /* Center horizontally */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    }
+    
+    /* Styles for the screen (content area) */
+    .screen {
+      width: 100%;
+      height: 100%;
+      background-image: url('https://imgur.com/Hn22XLT.png');
+      overflow: auto;
+    }
+  </style>
+</head>
+</head>
+
+<head>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+	<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+	<style>
+		#map-container {
+			position: absolute;
+			top: 22%; /* Adjust as needed to center vertically */
+			left: 140%; /* Adjust as needed to center horizontally */
+			transform: translate(-50%, -50%);
+		}
+
+		#map { 
+			width: 310px; 
+			height: 284px; 
+		}
+	</style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title></title>
+</head>
+<body>
+  <!-- Apple tablet frame -->
+  <div class="tablet-frame">
+    <!-- Screen (content area) -->
+    <div class="screen">
+      <!-- Paste the website's HTML code here -->
+      <!-- The entire website's HTML code goes here -->
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>B-Hole Collection</title>
   <style>
     * {
@@ -12,7 +70,6 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-image: url('https://imgur.com/Hn22XLT.png');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -24,9 +81,9 @@
 
     .slideshow-container {
       position: fixed;
-      top: 0;
-      right: 0;
-      width: 50%;
+      top: 22px;
+      right: 200px;
+      width: 30%;
       height: 46vh;
       overflow: hidden;
       border: 5px solid blue; /* Add a blue border */
@@ -39,7 +96,7 @@
      position: absolute;
      top: 350px; /* Adjust as needed to fit within the outer border */
      left: 0px; /* Adjust as needed to fit within the outer border */
-     width: 1000px;
+     width: 800px;
      height: calc(100% - 20px); /* Adjust based on the outer border thickness */
      border-top: 10px solid blue; /* Adjust thickness and color as needed */
    }
@@ -52,7 +109,7 @@
       text-shadow: 0 0 25px yellow; /* Add yellow halo effect */
       position: absolute;
       top: 5px; /* Adjust as needed to fit within the outer border */
-      left: 80px; /* Adjust as needed to fit within the outer border */
+      left: 70px; /* Adjust as needed to fit within the outer border */
     }
     
     .website-detail {
@@ -63,7 +120,7 @@
       text-shadow: 0 0 10px yellow; /* Add yellow halo effect */
       position: absolute;
       top: 45px; /* Adjust as needed to fit within the outer border */
-      left: 10px; /* Adjust as needed to fit within the outer border */
+      left: 1px; /* Adjust as needed to fit within the outer border */
     }
 
 @keyframes floatAnimation {
@@ -105,8 +162,8 @@
 .background-container {
   margin: 0 auto;
   position: fixed;
-  top: 60px; /* Adjust this value to set the height position from the top */
-  left: 1%; /* Adjust this value to set the width position from the left */
+  top: 90px; /* Adjust this value to set the height position from the top */
+  left: 200px; /* Adjust this value to set the width position from the left */
   color: black; /* Set the text color to white */
   text-shadow: 0 0 4px yellow; /* Add red halo effect */
   background-color: #f0f0f0; /* Add light grey background */
@@ -119,7 +176,7 @@
   width: 800px; /* Adjust the width of the content container */
   margin: 0 auto;
   padding: 20px; /* Adjust as needed */
-  height: 1000px; /* Adjust the height of the content container */
+  height: 670px; /* Adjust the height of the content container */
 }
 
 .form-half {
@@ -136,7 +193,7 @@
   display: block;
   margin-bottom: 3px;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 10px;
 }
 
 .form-half input[type="text"],
@@ -212,33 +269,12 @@
   
   </style>
 </head>
-
-<head>
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-	<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-	<style>
-		#map-container {
-			position: absolute;
-			top: 16%; /* Adjust as needed to center vertically */
-			left: 148%; /* Adjust as needed to center horizontally */
-			transform: translate(-50%, -50%);
-		}
-
-		#map { 
-			width: 370px; 
-			height: 284px; 
-		}
-	</style>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>My Map</title>
-</head>
-<body>
+      <body>
   <!-- Link to open QGIS Cloud site within iframe -->
-  <a href="https://qgiscloud.com/Borehole/Borehole/?l=Borehole%20points&bl=mapnik&t=Borehole&e=819488%2C710463%2C853186%2C727100_" target="_blank">Open QGIS Cloud Link</a>
+  <a href="https://qgiscloud.com/Borehole/Borehole/?l=Borehole%20points&bl=mapnik&t=Borehole&e=819488%2C710463%2C853186%2C727100_" target="_blank">.</a>
 
   <!-- Iframe to display QGIS Cloud site -->
-  <iframe src="https://qgiscloud.com/Borehole/Borehole/?l=Borehole%20points&bl=mapnik&t=Borehole&e=819488%2C710463%2C853186%2C727100_" width="73.5%" height="420" style="position: absolute; top: 365px; left: 420px;"></iframe>
+  <iframe src="https://qgiscloud.com/Borehole/Borehole/?l=Borehole%20points&bl=mapnik&t=Borehole&e=819488%2C710463%2C853186%2C727100_" width="66%" height="375" style="position: absolute; top: 365px; left: 405px;"></iframe>
 </body>
 <body>
  <div class="slideshow-wrapper">
@@ -450,5 +486,9 @@
 
 		L.control.layers(baseMaps).addTo(map);
 	</script>
+</body>
+      </html>
+    </div>
+  </div>
 </body>
 </html>
