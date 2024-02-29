@@ -36,13 +36,13 @@
 		#map-container {
 			position: absolute;
 			top: 22%; /* Adjust as needed to center vertically */
-			left: 140%; /* Adjust as needed to center horizontally */
+			left: 141%; /* Adjust as needed to center horizontally */
 			transform: translate(-50%, -50%);
 		}
 
 		#map { 
-			width: 310px; 
-			height: 284px; 
+			width: 306px; 
+			height: 290px; 
 		}
 	</style>
   <meta charset="utf-8"/>
@@ -80,10 +80,10 @@
     }
 
     .slideshow-container {
-      position: fixed;
-      top: 22px;
-      right: 200px;
-      width: 30%;
+      position: absolute;
+      top: 2px;
+      right: 3px;
+      width: 40%;
       height: 46vh;
       overflow: hidden;
       border: 5px solid blue; /* Add a blue border */
@@ -161,13 +161,13 @@
 
 .background-container {
   margin: 0 auto;
-  position: fixed;
-  top: 90px; /* Adjust this value to set the height position from the top */
-  left: 200px; /* Adjust this value to set the width position from the left */
+  position: absolute;
+  top: 70px; /* Adjust this value to set the height position from the top */
+  left: 2px; /* Adjust this value to set the width position from the left */
   color: black; /* Set the text color to white */
   text-shadow: 0 0 4px yellow; /* Add red halo effect */
   background-color: #f0f0f0; /* Add light grey background */
-  width: 25%; /* Adjust the width as needed */
+  width: 33%; /* Adjust the width as needed */
   background-color: rgba(240, 240, 240, 0.4); /* Light grey background with 80% opacity */
 }
 
@@ -486,8 +486,8 @@
 
 		L.control.layers(baseMaps).addTo(map);
 	</script>
-
-        <script>
+	
+	<script>
 // Prevent zooming by disabling the wheel event
 window.addEventListener('wheel', function(e) {
   e.preventDefault();
