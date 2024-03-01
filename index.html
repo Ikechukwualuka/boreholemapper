@@ -25,6 +25,8 @@
       background-image: url('https://imgur.com/Hn22XLT.png');
       overflow: auto;
     }
+    
+    
   </style>
 </head>
 </head>
@@ -108,7 +110,7 @@
       font-family: rockwell extra bold;
       text-shadow: 0 0 25px yellow; /* Add yellow halo effect */
       position: absolute;
-      top: 5px; /* Adjust as needed to fit within the outer border */
+      top: 10px; /* Adjust as needed to fit within the outer border */
       left: 70px; /* Adjust as needed to fit within the outer border */
     }
     
@@ -119,7 +121,7 @@
       font-family: aptos;
       text-shadow: 0 0 10px yellow; /* Add yellow halo effect */
       position: absolute;
-      top: 45px; /* Adjust as needed to fit within the outer border */
+      top: 50px; /* Adjust as needed to fit within the outer border */
       left: 1px; /* Adjust as needed to fit within the outer border */
     }
 
@@ -269,6 +271,33 @@
   
   </style>
 </head>
+
+<style>
+        /* CSS for controlling image */
+        .image-container {
+            position: absolute;
+            top: 0.8%; /* Adjust as needed */
+            left: 50%; /* Adjust as needed */
+            transform: translate(-50%, -50%);
+            width: 1200px; /* Adjust as needed */
+            height: 13px; /* Adjust as needed */
+        }
+
+        .image-container img {
+            width: 100%; /* Make the image responsive within its container */
+            height: 100%; /* Make the image responsive within its container */
+            object-fit: cover; /* Ensure the image covers the container without stretching */
+        }
+    </style>
+</head>
+<body>
+    <!-- HTML for the image -->
+    <div class="image-container">
+        <img src="https://imgur.com/kimCnBl.png" alt="Apple header">
+    </div>
+</body>
+
+
       <body>
   <!-- Link to open QGIS Cloud site within iframe -->
   <a href="https://qgiscloud.com/Borehole/Borehole/?l=Borehole%20points&bl=mapnik&t=Borehole&e=819488%2C710463%2C853186%2C727100_" target="_blank">.</a>
